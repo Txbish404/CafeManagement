@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useTheme } from "../components/theme-provider"; // Assuming you have a theme provider
+import { useTheme } from "../components/theme-provider"; 
 import { useToast } from '../components/ui/use-toast';
 import { Toast } from '../components/ui/toast';
 

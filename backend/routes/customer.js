@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth'); // Ensure the correct path
-const MenuItem = require('../models/MenuItem'); // Ensure the correct path
-const Cart = require('../models/Cart'); // Ensure the correct path
+const auth = require('../middleware/auth'); 
+const MenuItem = require('../models/MenuItem'); 
+const Cart = require('../models/Cart'); 
 const HelpDeskTicket = require('../models/HelpDeskTicket');
 const Feedback = require('../models/Feedback');
 const Order = require('../models/Order');
 const User = require('../models/User');
 const Reservation = require('../models/Reservation');
-require('dotenv').config(); // Add this line
+require('dotenv').config(); 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 console.log('Stripe Key:', process.env.STRIPE_SECRET_KEY);
 
@@ -257,7 +257,7 @@ router.get('/profile',auth, async (req, res) => {
 router.put('/profile',auth, async (req, res) => {
   try {
     const updatedProfile = req.body;
-    const user = await User.findByIdAndUpdate(req.user._id // Adjust the query as needed
+    const user = await User.findByIdAndUpdate(req.user._id 
       , updatedProfile,
       { new: true }
     );

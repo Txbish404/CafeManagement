@@ -45,12 +45,12 @@ export default function InventoryManagement() {
       // Convert quantity and lowStockThreshold to numbers
       const response = await axios.post("http://localhost:5000/api/staff/inventory", {
         item: data.item,
-        quantity: parseInt(data.quantity), // Ensure this is a number
+        quantity: parseInt(data.quantity), 
         unit: data.unit,
-        lowStockThreshold: parseInt(data.lowStockThreshold), // Ensure this is a number
+        lowStockThreshold: parseInt(data.lowStockThreshold),
         supplier: data.supplier,
       });
-      console.log("Response from adding item:", response.data); // Debugging line
+      console.log("Response from adding item:", response.data);
       setInventoryItems((prevItems) => [...prevItems, response.data]);
       showToast({
         title: "Success",
@@ -64,7 +64,7 @@ export default function InventoryManagement() {
         description: "Failed to add inventory item",
         variant: "destructive",
       });
-      console.error("Error adding inventory item:", error.response.data); // Log the error response
+      console.error("Error adding inventory item:", error.response.data); 
     }
   };
 

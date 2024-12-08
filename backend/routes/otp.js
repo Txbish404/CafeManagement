@@ -2,8 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
-const OTP = require('../models/OTP'); // Create an OTP model to store OTPs
-const User = require('../models/User'); // Assuming you have a User model
+const OTP = require('../models/OTP'); 
+const User = require('../models/User');
 
 // Middleware to parse JSON bodies
 router.use(express.json());
